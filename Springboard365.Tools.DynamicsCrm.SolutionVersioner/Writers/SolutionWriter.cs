@@ -18,9 +18,9 @@
         {
             var toUpdate = new Entity("solution")
             {
-                Id = solutionId,
-                ["version"] = solutionVersion
+                Id = solutionId
             };
+            toUpdate["version"] = solutionVersion;
 
             logger.InfoFormat("Updating solution start with id '{0}' with version '{1}'", solutionId, solutionVersion);
             organizationService.Update(toUpdate);

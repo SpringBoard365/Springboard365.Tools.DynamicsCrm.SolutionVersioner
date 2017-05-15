@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("Springboard365.Tools.DynamicsCrm.SolutionVersioner")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("The solution version tool for Dynamics Crm.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Springboard 365 Ltd")]
 [assembly: AssemblyProduct("Springboard365.Tools.DynamicsCrm.SolutionVersioner")]
