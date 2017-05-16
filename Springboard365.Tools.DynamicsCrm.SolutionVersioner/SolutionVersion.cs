@@ -4,12 +4,16 @@
 
     public class SolutionVersion : CrmToolBase
     {
-        private readonly ISolutionReader solutionReader;
-        private readonly ISolutionWriter solutionWriter;
-        private readonly IVersionIncrementor versionIncrementor;
+        private ISolutionReader solutionReader;
+        private ISolutionWriter solutionWriter;
+        private IVersionIncrementor versionIncrementor;
 
         public SolutionVersion(string[] args)
             : base(new SolutionVersionCommandLineParameters(), args)
+        {
+        }
+
+        public override void Initialize()
         {
             solutionReader = new SolutionReader(OrganizationService);
             solutionWriter = new SolutionWriter(OrganizationService);

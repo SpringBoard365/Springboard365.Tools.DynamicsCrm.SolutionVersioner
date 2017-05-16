@@ -51,8 +51,8 @@
       <HintPath>..\packages\Springboard365.Tools.CommandLine.Core.1.1.0\lib\net40\Springboard365.Tools.CommandLine.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Springboard365.Tools.DynamicsCrm.Common, Version=1.2.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\Springboard365.Tools.DynamicsCrm.Common.1.2.0\lib\net40\Springboard365.Tools.DynamicsCrm.Common.dll</HintPath>
+    <Reference Include="Springboard365.Tools.DynamicsCrm.Common, Version=1.2.1.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\Springboard365.Tools.DynamicsCrm.Common.1.2.1\lib\net40\Springboard365.Tools.DynamicsCrm.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -86,6 +86,7 @@
   <ItemGroup>
     <None Include="NuGet\NuGetPush.bat" />
     <None Include="packages.config" />
+    <None Include="Springboard365.Tools.DynamicsCrm.SolutionVersioner.nuspec" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="NuGet\NuGet.exe" />
