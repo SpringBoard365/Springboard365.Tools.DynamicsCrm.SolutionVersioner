@@ -15,7 +15,7 @@
                 return;
             }
 
-            using (var file = new StreamWriter(Directory.GetCurrentDirectory() + fileName))
+            using (var file = new StreamWriter($"{Directory.GetCurrentDirectory()}\\{fileName}"))
             {
                 var versionNumberSplit = versionNumber.Split(delimiterToSplit);
                 var newSolutionVersion = string.Join(delimiterToOutput, versionNumberSplit);
