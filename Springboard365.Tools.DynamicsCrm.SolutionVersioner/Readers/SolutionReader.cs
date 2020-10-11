@@ -1,13 +1,12 @@
 ﻿namespace Springboard365.Tools.DynamicsCrm.SolutionVersioner
 {
+    using System;
     using System.Linq;
-    using log4net;
     using Microsoft.Xrm.Sdk;
     using Microsoft.Xrm.Sdk.Query;
 
     public class SolutionReader : ISolutionReader
     {
-        private readonly ILog logger = LogManager.GetLogger(typeof(SolutionReader));
         private readonly IOrganizationService organizationService;
 
         public SolutionReader(IOrganizationService organizationService)
@@ -25,9 +24,9 @@
             };
             querySolution.Criteria.AddCondition("uniquename", ConditionOperator.Equal, solutionUniqueName);
 
-            logger.Info("Retrieve solution entity start.");
+            Console.WriteLine("Retrieve solution entity start.");
             var solutionEntity = organizationService.RetrieveMultiple(querySolution).Entities.First();
-            logger.Info("Retrieve solution entity end.");
+            Console.WriteLine("Retrieve solution entity end.");
 
             return solutionEntity;
         }
