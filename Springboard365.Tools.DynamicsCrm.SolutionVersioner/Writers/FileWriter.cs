@@ -1,5 +1,6 @@
 ﻿namespace Springboard365.Tools.DynamicsCrm.SolutionVersioner
 {
+    using System;
     using System.IO;
 
     public class FileWriter : IFileWriter
@@ -19,6 +20,7 @@
                 var versionNumberSplit = versionNumber.Split(delimiterToSplit);
                 var newSolutionVersion = string.Join(delimiterToOutput, versionNumberSplit);
                 file.WriteLine(newSolutionVersion);
+                Console.WriteLine($"Writing {newSolutionVersion} to {fileName}");
             }
         }
     }
