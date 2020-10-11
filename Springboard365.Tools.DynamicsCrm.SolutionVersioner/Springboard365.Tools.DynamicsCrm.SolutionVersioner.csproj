@@ -95,6 +95,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Writers\FileWriter.cs" />
+    <Compile Include="Writers\IFileWriter.cs" />
     <Compile Include="Readers\ISolutionReader.cs" />
     <Compile Include="Writers\ISolutionWriter.cs" />
     <Compile Include="Utils\IVersionIncrementor.cs" />
@@ -107,12 +109,10 @@
     <Compile Include="Utils\VersionIncrementor.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="NuGet\NuGetPush.bat" />
+    <None Include="app.config" />
+    <None Include="Build\NuGetPush.bat" />
     <None Include="packages.config" />
     <None Include="Springboard365.Tools.DynamicsCrm.SolutionVersioner.nuspec" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="NuGet\NuGet.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

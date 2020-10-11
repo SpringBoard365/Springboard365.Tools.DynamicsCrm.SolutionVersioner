@@ -17,6 +17,11 @@
 
         public string IncrementVersion(string currentSolutionVersion, string solutionVersionPartToIncrement)
         {
+            if (solutionVersionPartToIncrement.Equals("none"))
+            {
+                return currentSolutionVersion;
+            }
+
             var solutionVersionSplit = currentSolutionVersion.Split('.');
 
             var solutionVersionPart = int.Parse(solutionVersionSplit[solutionPartNameList[solutionVersionPartToIncrement] - 1]);

@@ -3,12 +3,28 @@
   <metadata>
     <id>$id$</id>
     <version>$version$</version>
-    <title>$title$</title>
+    <title>$id$</title>
     <authors>$author$</authors>
-    <owners>$author$</owners>
+	<repository type="git" url="$repo$"/>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <copyright>Copyright $author$ 2017</copyright>
-    <tags>Solution Version Increment Microsoft Dynamics CRM 2011 2013 2015 2016 SDK XRM 365 On Premise On-Premise Online</tags>
+    <copyright>Copyright $author$ 2020</copyright>
+    <tags>$tags$</tags>
   </metadata>
+  <files>
+    <file src="bin\$Configuration$\Springboard365.Tools.DynamicsCrm.SolutionVersioner.exe" target="tools\SolutionVersioner.exe" />
+    <file src="Build\SolutionVersioner.exe.config" target="tools\SolutionVersioner.exe.config" />
+    <file src="bin\$Configuration$\Microsoft.Crm.Sdk.Proxy.dll" target="tools" />
+    <file src="bin\$Configuration$\Microsoft.IdentityModel.Clients.ActiveDirectory.dll" target="tools" />
+    <file src="bin\$Configuration$\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll" target="tools" />
+    <file src="bin\$Configuration$\Microsoft.Crm.Sdk.Proxy.dll" target="tools" />
+    <file src="bin\$Configuration$\Microsoft.Rest.ClientRuntime.dll" target="tools" />
+    <file src="bin\$Configuration$\Microsoft.Xrm.Sdk.Deployment.dll" target="tools" />
+    <file src="bin\$Configuration$\Microsoft.Xrm.Sdk.dll" target="tools" />
+    <file src="bin\$Configuration$\Microsoft.Xrm.Sdk.Workflow.dll" target="tools" />
+    <file src="bin\$Configuration$\Microsoft.Xrm.Tooling.Connector.dll" target="tools" />
+    <file src="bin\$Configuration$\Newtonsoft.Json.dll" target="tools" />
+    <file src="bin\$Configuration$\Springboard365.Tools.CommandLine.Core.dll" target="tools" />
+    <file src="bin\$Configuration$\Springboard365.Tools.DynamicsCrm.Common.dll" target="tools" />
+  </files>
 </package>

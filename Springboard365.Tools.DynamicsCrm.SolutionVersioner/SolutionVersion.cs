@@ -4,6 +4,7 @@
 
     public class SolutionVersion : CrmToolBase
     {
+        private IFileWriter fileWriter;
         private ISolutionReader solutionReader;
         private ISolutionWriter solutionWriter;
         private IVersionIncrementor versionIncrementor;
@@ -15,6 +16,7 @@
 
         public override void Initialize()
         {
+            fileWriter = new FileWriter();
             solutionReader = new SolutionReader(OrganizationService);
             solutionWriter = new SolutionWriter(OrganizationService);
             versionIncrementor = new VersionIncrementor();
@@ -29,6 +31,8 @@
             var solutionVersion = versionIncrementor.IncrementVersion(solutionEntity["version"].ToString(), parameters.SolutionVersionPartToIncrement);
 
             solutionWriter.UpdateSolution(solutionEntity.Id, solutionVersion);
+
+            fileWriter.WriteVersionNumberToFile(solutionVersion, parameters.FileNameToWriteVersionNumberTo);
         }
     }
 }
