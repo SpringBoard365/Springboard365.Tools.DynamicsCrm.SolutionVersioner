@@ -7,7 +7,7 @@
 
     public class VersionIncrementor : IVersionIncrementor
     {
-        private readonly Dictionary<string, int> solutionPartNameList = new Dictionary<string,int>
+        private readonly Dictionary<string, int> solutionPartNameList = new Dictionary<string, int>
         {
             { "major", 1 },
             { "minor", 2 },
@@ -24,23 +24,45 @@
 
             var solutionVersionSplit = currentSolutionVersion.Split('.');
 
-            var solutionVersionPart = int.Parse(solutionVersionSplit[solutionPartNameList[solutionVersionPartToIncrement] - 1]);
+            var solutionVersionPartAsString = solutionVersionSplit[solutionPartNameList[solutionVersionPartToIncrement] - 1];
 
-            Console.WriteLine("Solution Version {0}: {1}", solutionVersionPartToIncrement, solutionVersionPart);
+            Console.WriteLine("Solution Version {0}: {1}", solutionVersionPartToIncrement, solutionVersionPartAsString);
+
+            var paddedWithAZero = solutionVersionPartAsString.StartsWith("0");
+
+            var solutionVersionPart = int.Parse(solutionVersionPartAsString);
             solutionVersionPart++;
 
-            Console.WriteLine("New Solution Version {0}: {1}", solutionVersionPartToIncrement, solutionVersionPart);
-            solutionVersionSplit[solutionPartNameList[solutionVersionPartToIncrement] - 1] = solutionVersionPart.ToString(CultureInfo.InvariantCulture);
+            var newSolutionVersionPart = solutionVersionPart.ToString(CultureInfo.InvariantCulture);
+
+            if (paddedWithAZero)
+            {
+                if (solutionVersionPart <= 9)
+                {
+                    newSolutionVersionPart = $"0{solutionVersionPart.ToString(CultureInfo.InvariantCulture)}";
+                }
+            }
+
+            Console.WriteLine("New Solution Version {0}: {1}", solutionVersionPartToIncrement, newSolutionVersionPart);
+            solutionVersionSplit[solutionPartNameList[solutionVersionPartToIncrement] - 1] = newSolutionVersionPart;
 
             for (var i = solutionPartNameList[solutionVersionPartToIncrement]; i < solutionVersionSplit.Count(); i++)
             {
-                Console.WriteLine("Updating '{0}' to zero", solutionPartNameList.ElementAt(i));
-                solutionVersionSplit[i] = 0.ToString(CultureInfo.InvariantCulture);
+                if (paddedWithAZero)
+                {
+                    Console.WriteLine("Updating '{0}' to 01", solutionPartNameList.ElementAt(i));
+                    solutionVersionSplit[i] = "01";
+                }
+                else
+                {
+                    Console.WriteLine("Updating '{0}' to zero", solutionPartNameList.ElementAt(i));
+                    solutionVersionSplit[i] = 0.ToString(CultureInfo.InvariantCulture);
+                }
             }
 
             var newSolutionVersion = string.Join(".", solutionVersionSplit);
 
-            Console.WriteLine("New Solution Version {0}: {1}", solutionVersionPartToIncrement, solutionVersionPart);
+            Console.WriteLine("New Solution Version '{0}'", newSolutionVersion);
             return newSolutionVersion;
         }
     }
