@@ -110,10 +110,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Build\NuGetPush.bat" />
-    <None Include="Build\SolutionVersioner.exe.config" />
     <None Include="packages.config" />
-    <None Include="Springboard365.Tools.DynamicsCrm.SolutionVersioner.nuspec" />
+    <None Include="SolutionVersioner.nuspec" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

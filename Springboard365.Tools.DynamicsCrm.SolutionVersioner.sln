@@ -1,9 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Springboard365.Tools.DynamicsCrm.SolutionVersioner", "Springboard365.Tools.DynamicsCrm.SolutionVersioner\Springboard365.Tools.DynamicsCrm.SolutionVersioner.csproj", "{F1DABBB0-0140-4CC1-A0E0-5E82DFB9A1FE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolutionVersioner", "src\SolutionVersioner.csproj", "{F1DABBB0-0140-4CC1-A0E0-5E82DFB9A1FE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{EA9525A6-0DFB-4BFE-A3B3-4FDB4B2CE82A}"
+	ProjectSection(SolutionItems) = preProject
+		Build\NuGetPush.bat = Build\NuGetPush.bat
+		Build\SolutionVersioner.exe.config = Build\SolutionVersioner.exe.config
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +24,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8B2347D3-18CC-47D7-BDA5-2F763B3B4D52}
 	EndGlobalSection
 EndGlobal
