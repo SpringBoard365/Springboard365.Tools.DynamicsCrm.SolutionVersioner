@@ -16,7 +16,7 @@
         {
             var toUpdate = new Entity("solution")
             {
-                Id = solutionId
+                Id = solutionId,
             };
             toUpdate["version"] = solutionVersion;
 

@@ -20,7 +20,7 @@
             {
                 EntityName = "solution",
                 ColumnSet = new ColumnSet("version"),
-                Criteria = new FilterExpression()
+                Criteria = new FilterExpression(),
             };
             querySolution.Criteria.AddCondition("uniquename", ConditionOperator.Equal, solutionUniqueName);
 

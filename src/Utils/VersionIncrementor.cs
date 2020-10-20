@@ -12,7 +12,7 @@
             { "major", 1 },
             { "minor", 2 },
             { "build", 3 },
-            { "revision", 4 }
+            { "revision", 4 },
         };
 
         public string IncrementVersion(string currentSolutionVersion, string solutionVersionPartToIncrement)
