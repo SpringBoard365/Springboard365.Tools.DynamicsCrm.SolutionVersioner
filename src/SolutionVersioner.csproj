@@ -9,7 +9,7 @@
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Springboard365.Tools.DynamicsCrm.SolutionVersioner</RootNamespace>
-    <AssemblyName>Springboard365.Tools.DynamicsCrm.SolutionVersioner</AssemblyName>
+    <AssemblyName>SolutionVersioner</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

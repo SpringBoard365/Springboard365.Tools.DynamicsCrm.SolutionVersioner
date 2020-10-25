@@ -15,8 +15,8 @@
     <group targetFramework=".NETFramework4.6.2" />
   </dependencies>
   <files>
-    <file src="bin\$Configuration$\Springboard365.Tools.DynamicsCrm.SolutionVersioner.exe" target="tools\SolutionVersioner.exe" />
-    <file src="..\Build\SolutionVersioner.exe.config" target="tools\SolutionVersioner.exe.config" />
+    <file src="bin\$Configuration$\SolutionVersioner.exe" target="tools" />
+    <file src="..\Build\SolutionVersioner.exe.config" target="tools" />
     <file src="bin\$Configuration$\Microsoft.Crm.Sdk.Proxy.dll" target="tools" />
     <file src="bin\$Configuration$\Microsoft.IdentityModel.Clients.ActiveDirectory.dll" target="tools" />
     <file src="bin\$Configuration$\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll" target="tools" />
