@@ -1,4 +1,4 @@
-SET packageVersion=2.0.1-beta01
+SET packageVersion=2.0.0-beta02
 
 SET configuration=Release
 SET id="Springboard365.Tools.DynamicsCrm.SolutionVersioner";

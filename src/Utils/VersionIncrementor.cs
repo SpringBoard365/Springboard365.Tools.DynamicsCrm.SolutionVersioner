@@ -1,9 +1,9 @@
 ﻿namespace Springboard365.Tools.DynamicsCrm.SolutionVersioner
 {
-    using System;
     using System.Collections.Generic;
     using System.Globalization;
     using System.Linq;
+    using Springboard365.Tools.CommandLine.Core;
 
     public class VersionIncrementor : IVersionIncrementor
     {
@@ -26,7 +26,7 @@
 
             var solutionVersionPartAsString = solutionVersionSplit[solutionPartNameList[solutionVersionPartToIncrement] - 1];
 
-            Console.WriteLine("Solution Version {0}: {1}", solutionVersionPartToIncrement, solutionVersionPartAsString);
+            ConsoleLogger.LogMessage($"Solution Version {solutionVersionPartToIncrement}: {solutionVersionPartAsString}");
 
             var paddedWithAZero = solutionVersionPartAsString.StartsWith("0");
 
@@ -43,26 +43,26 @@
                 }
             }
 
-            Console.WriteLine("New Solution Version {0}: {1}", solutionVersionPartToIncrement, newSolutionVersionPart);
+            ConsoleLogger.LogMessage($"New Solution Version {solutionVersionPartToIncrement}: {newSolutionVersionPart}");
             solutionVersionSplit[solutionPartNameList[solutionVersionPartToIncrement] - 1] = newSolutionVersionPart;
 
             for (var i = solutionPartNameList[solutionVersionPartToIncrement]; i < solutionVersionSplit.Count(); i++)
             {
                 if (paddedWithAZero)
                 {
-                    Console.WriteLine("Updating '{0}' to 01", solutionPartNameList.ElementAt(i));
+                    ConsoleLogger.LogMessage($"Updating '{solutionPartNameList.ElementAt(i)}' to 01");
                     solutionVersionSplit[i] = "01";
                 }
                 else
                 {
-                    Console.WriteLine("Updating '{0}' to zero", solutionPartNameList.ElementAt(i));
+                    ConsoleLogger.LogMessage($"Updating '{solutionPartNameList.ElementAt(i)}' to zero");
                     solutionVersionSplit[i] = 0.ToString(CultureInfo.InvariantCulture);
                 }
             }
 
             var newSolutionVersion = string.Join(".", solutionVersionSplit);
 
-            Console.WriteLine("New Solution Version '{0}'", newSolutionVersion);
+            ConsoleLogger.LogMessage($"New Solution Version '{newSolutionVersion}'");
             return newSolutionVersion;
         }
     }
