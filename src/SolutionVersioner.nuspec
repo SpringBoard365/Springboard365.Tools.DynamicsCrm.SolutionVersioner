@@ -10,10 +10,10 @@
     <description>$description$</description>
     <copyright>Copyright $author$ 2020</copyright>
     <tags>$tags$</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.6.2" />
+    </dependencies>
   </metadata>
-  <dependencies>
-    <group targetFramework=".NETFramework4.6.2" />
-  </dependencies>
   <files>
     <file src="bin\$Configuration$\SolutionVersioner.exe" target="tools" />
     <file src="..\Build\SolutionVersioner.exe.config" target="tools" />
